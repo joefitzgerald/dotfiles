@@ -1,9 +1,11 @@
 #!/bin/bash
 
-apt-get update
-apt-get -y upgrade
-apt-get --assume-yes install tmux git vim zsh
-chsh -s /usr/bin/zsh
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get --assume-yes install tmux git vim zsh
+
+chsh -s /usr/bin/zsh joe
+git clone https://github.com/joefitzgerald/dotfiles.git
 if [[ "$OSTYPE" == darwin* ]]; then
   wget -O go.tar.gz https://storage.googleapis.com/golang/go1.8.3.darwin-amd64.tar.gz
 else

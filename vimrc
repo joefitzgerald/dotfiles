@@ -2,7 +2,9 @@
 call plug#begin()
 Plug 'fatih/vim-go'
 Plug 'fatih/molokai'
+Plug 'maralla/completor.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
@@ -164,3 +166,6 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
+
+let g:completor_go_omni_trigger='(?:\b[^\W\d]\w*|[\]\)\.(?:[^\W\d]\w*)?'
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"

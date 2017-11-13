@@ -2,7 +2,10 @@
 
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get --assume-yes install tmux git vim zsh
+sudo apt-get --assume-yes install tmux git zsh silversearcher-ag net-tools unattended-upgrades software-properties-common python-software-properties
+sudo add-apt-repository -yu ppa:pi-rho/dev
+sudo apt-get update
+sudo apt-get --assume-yes install vim
 
 chsh -s /usr/bin/zsh joe
 git clone https://github.com/joefitzgerald/dotfiles.git
@@ -26,3 +29,6 @@ ln -fs "$HOME/dotfiles/zlogin" "$HOME/.zlogin"
 ln -fs "$HOME/dotfiles/zlogout" "$HOME/.zlogout"
 ln -fs "$HOME/dotfiles/zshenv" "$HOME/.zshenv"
 mkdir "$HOME/go"
+git config --global user.email "jfitzgerald@pivotal.io"
+git config --global user.name "Joe Fitzgerald"
+git config --global pull.rebase true

@@ -7,10 +7,11 @@ sudo apt-get --assume-yes install tmux git vim zsh
 chsh -s /usr/bin/zsh joe
 git clone https://github.com/joefitzgerald/dotfiles.git
 if [[ "$OSTYPE" == darwin* ]]; then
-  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.8.3.darwin-amd64.tar.gz
+  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.9.2.darwin-amd64.tar.gz
 else
-  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
+  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 fi
+rm -rf /usr/local/go
 tar -C /usr/local -xzf go.tar.gz
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

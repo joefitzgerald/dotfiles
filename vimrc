@@ -7,6 +7,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 """"""""""""""""""""""
@@ -16,8 +18,10 @@ set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
 set ttyfast                     " Indicate fast terminal conn for faster redraw
-set ttymouse=xterm2             " Indicate terminal type for mouse codes
-set ttyscroll=3                 " Speedup scrolling
+if !has('nvim')
+  set ttymouse=xterm2             " Indicate terminal type for mouse codes
+  set ttyscroll=3                 " Speedup scrolling
+endif
 set laststatus=2                " Show status line always
 set encoding=utf-8              " Set default encoding to UTF-8
 set autoread                    " Automatically read changed files
@@ -169,3 +173,5 @@ endfunction
 
 let g:completor_go_omni_trigger='(?:\b[^\W\d]\w*|[\]\)\.(?:[^\W\d]\w*)?'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1

@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 CURRENTDIR=$(dirname "$0")
 rm -rf "$HOME/.zprezto"

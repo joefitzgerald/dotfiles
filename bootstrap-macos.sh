@@ -3,6 +3,7 @@
 CURRENTDIR=$(dirname "$0")
 rm -rf "$HOME/.zprezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+chsh -s /bin/zsh
 ln -fs "$CURRENTDIR/vimrc" "$HOME/.vimrc"
 ln -fs "$CURRENTDIR/zpreztorc-macos" "$HOME/.zpreztorc"
 ln -fs "$CURRENTDIR/zprofile" "$HOME/.zprofile"

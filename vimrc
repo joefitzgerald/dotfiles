@@ -7,7 +7,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
@@ -175,3 +175,9 @@ let g:completor_go_omni_trigger='(?:\b[^\W\d]\w*|[\]\)\.(?:[^\W\d]\w*)?'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
+
+" NERDTree
+let NERDTreeQuitOnOpen = 1
+map <C-n> :NERDTreeToggle<CR>
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

@@ -9,10 +9,11 @@ sudo apt-get --assume-yes install vim
 
 chsh -s /usr/bin/zsh joe
 git clone https://github.com/joefitzgerald/dotfiles.git
+export GOVERSION="1.11.2"
 if [[ "$OSTYPE" == darwin* ]]; then
-  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.9.2.darwin-amd64.tar.gz
+  wget -O go.tar.gz "https://storage.googleapis.com/golang/go$GOVERSION.darwin-amd64.tar.gz"
 else
-  wget -O go.tar.gz https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
+  wget -O go.tar.gz "https://storage.googleapis.com/golang/go$GOVERSION.linux-amd64.tar.gz"
 fi
 sudo rm -rf /usr/local/go
 sudo mkdir -p /usr/local/go

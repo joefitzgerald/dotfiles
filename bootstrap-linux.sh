@@ -3,9 +3,9 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get --assume-yes install tmux git zsh silversearcher-ag net-tools unattended-upgrades software-properties-common python-software-properties
-sudo add-apt-repository -yu ppa:pi-rho/dev
+sudo add-apt-repository -yu ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get --assume-yes install vim
+sudo apt-get --assume-yes install neovim
 
 chsh -s /usr/bin/zsh joe
 git clone https://github.com/joefitzgerald/dotfiles.git
@@ -20,12 +20,9 @@ sudo mkdir -p /usr/local/go
 sudo chown joe:joe /usr/local/go
 tar -C /usr/local -xzf go.tar.gz
 rm -rf go.tar.gz
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-rm -rf ~/.vim/plugged/vim-go
-rm -rf ~/.vim/plugged/molokai
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+rm -rf ~/.vim/plugged
 rm -rf ~/.zprezto
-git clone https://github.com/fatih/vim-go.git ~/.vim/plugged/vim-go
-git clone https://github.com/fatih/molokai.git ~/.vim/plugged/molokai
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
 ln -fs "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 ln -fs "$HOME/dotfiles/zpreztorc-linux" "$HOME/.zpreztorc"

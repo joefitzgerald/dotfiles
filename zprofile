@@ -39,8 +39,11 @@ export PATH="$GOPATH/bin:$PATH"
 # Set the list of directories that Zsh searches for programs.
 path=(
   $gopath/bin
+  /usr/local/opt/curl/bin
   /usr/local/{bin,sbin}
   /usr/local/go/bin
+  /usr/local/opt/gettext/bin
+  /usr/local/opt/bison/bin
   $path
 )
 

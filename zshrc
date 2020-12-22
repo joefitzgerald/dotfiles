@@ -102,6 +102,25 @@ bindkey "\eOP" run-help
 # it's like, space AND completion.  Gnarlbot.
 # bindkey -M viins ' ' magic-space
 
+SPACESHIP_GIT_SYMBOL=""
+SPACESHIP_GIT_BRANCH_PREFIX=""
+
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  exec_time     # Execution time
+  line_sep      # Line break
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_DIR_TRUNC="0"
+SPACESHIP_DIR_TRUNC_REPO="false"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval "$(direnv hook zsh)"
